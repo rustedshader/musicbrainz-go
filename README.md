@@ -1,7 +1,7 @@
 [![GoDoc](https://godoc.org/github.com/rustedshader/musicbrainz-go?status.svg)](https://godoc.org/github.com/rustedshader/musicbrainz-go)
-# MusicBrainz-Go
+# MusicBrainz Go
 
-**MusicBrainz-Go** is a Go library for interacting with the [MusicBrainz API](https://musicbrainz.org/doc/MusicBrainz_API). This package provides an easy-to-use client for querying the MusicBrainz database to fetch metadata related to music recordings, artists, releases, and more.
+**MusicBrainz Go** is a Go library for interacting with the [MusicBrainz API](https://musicbrainz.org/doc/MusicBrainz_API). This package provides an easy-to-use client for querying the MusicBrainz database to fetch metadata related to music recordings, artists, releases, and more.
 
 ## Features
 
