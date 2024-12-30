@@ -1,23 +1,135 @@
-Package musicbrainz-go provides a client for interacting with the MusicBrainz API.
+# MusicBrainz-Go
 
-This package allows querying the MusicBrainz database for music recordings and related metadata.
-It provides a simple interface to search recordings by title and duration through the MusicBrainz web service API v2.
+**MusicBrainz-Go** is a Go library for interacting with the [MusicBrainz API](https://musicbrainz.org/doc/MusicBrainz_API). This package provides an easy-to-use client for querying the MusicBrainz database to fetch metadata related to music recordings, artists, releases, and more.
 
-I am not so fluent in go take this package with grain of salt.
-I am learning while creating this package
+## Features
 
+- Query MusicBrainz API for:
+  - Artists
+  - Releases
+  - Recordings
+  - Labels
+  - Areas
+  - Events
+  - Instruments
+  - Tags
+  - Places
+  - Series
+  - Work
+  - URLs
+- Simple and efficient HTTP client implementation.
+- Handles API response parsing and error management.
 
-Basic usage:
+---
 
-	client := musicbrainzgo.NewClient()
-	opts := musicbrainzgo.SearchOptions{
-		Query: "song title",
-		MusicLength: 180000 // duration in milliseconds
+## Installation
+
+To use this library in your project, install it using `go get`:
+
+```bash
+go get github.com/rustedshader/musicbrainz-go
+```
+
+## Usage
+
+### Initialize the Client
+To start using the library, create a new MusicBrainzClient instance:
+```go
+package main
+
+import (
+	"fmt"
+	"musicbrainzgo"
+)
+
+func main() {
+	client := musicbrainzgo.Client()
+	fmt.Println("Client initialized:", client)
+}
+```
+
+### Example: Search for an Artist
+```go
+package main
+
+import (
+	"fmt"
+	"musicbrainzgo"
+)
+
+func main() {
+	client := musicbrainzgo.Client()
+
+	// Define search parameters for the artist
+	opts := musicbrainzgo.MusicBrainzArtistParameters{
+		Query: "The Beatles",
 	}
-	recordings, err := client.SearchRecordings(opts)
 
+	// Search for the artist
+	response, err := client.SearchArtist(opts)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
 
-For more information about the MusicBrainz API, visit: https://musicbrainz.org/doc/Development/XML_Web_Service/Version_2
+	// Print results
+	fmt.Println("Artist Search Results:", response)
+}
+```
 
-Authored by: Shubhang Sharma
-Github: https://github.com/rustedshader
+## API Reference
+
+### Search Methods
+
+The following search methods are available in the client:
+
+```go
+// Search for annotations
+SearchAnnotation(opts MusicBrainzAnnotationParameters)
+
+// Search for areas
+SearchArea(opts MusicBrainzAreaParameters)
+
+// Search for artists
+SearchArtist(opts MusicBrainzArtistParameters)
+
+// Search for CD stubs
+SearchCDStub(opts MusicBrainzCDStubsParameters)
+
+// Search for events
+SearchEvent(opts MusicBrainzEventParameters)
+
+// Search for instruments
+SearchInstrument(opts MusicBrainzInstrumentParameters)
+
+// Search for labels
+SearchLabel(opts MusicBrainzLabelParameters)
+
+// Search for places
+SearchPlace(opts MusicBrainzPlaceParameters)
+
+// Search for recordings
+SearchRecording(opts MusicBrainzRecordingParameters)
+
+// Search for release groups
+SearchReleaseGroup(opts MusicBrainzReleaseGroupParameters)
+
+// Search for releases
+SearchRelease(opts MusicBrainzReleaseParameters)
+
+// Search for series
+SearchSeries(opts MusicBrainzSeriesParameters)
+
+// Search for tags
+SearchTag(opts MusicBrainzTagParameters)
+
+// Search for URLs
+SearchUrl(opts MusicBrainzUrlParameters)
+
+// Search for works
+SearchWork(opts MusicBrainzWorkParameters)
+```
+
+## Author
+
+- **Shubhang Sharma** - [GitHub](https://github.com/rustedshader)
