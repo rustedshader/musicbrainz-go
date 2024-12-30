@@ -260,7 +260,7 @@ type MusicBrainzAnnotationResponse struct {
 	Offset      int    `json:"offset"`
 	Annotations []struct {
 		Type   string `json:"type"`
-		Score  string `json:"score"`
+		Score  int    `json:"score"`
 		Entity string `json:"entity"`
 		Name   string `json:"name"`
 		Text   string `json:"text"`
@@ -274,7 +274,7 @@ type MusicBrainzAreaResponse struct {
 	Areas   []struct {
 		ID            string   `json:"id"`
 		Type          string   `json:"type"`
-		Score         string   `json:"score"`
+		Score         int      `json:"score"`
 		Name          string   `json:"name"`
 		SortName      string   `json:"sort-name"`
 		ISO31662Codes []string `json:"iso-3166-2-codes"`
@@ -317,7 +317,7 @@ type MusicBrainzArtistResponse struct {
 	Artists []struct {
 		ID       string `json:"id"`
 		Type     string `json:"type"`
-		Score    string `json:"score"`
+		Score    int    `json:"score"`
 		Name     string `json:"name"`
 		SortName string `json:"sort-name"`
 		Country  string `json:"country"`
@@ -359,7 +359,7 @@ type MusicBrainzCDStubsResponse struct {
 	Offset  int    `json:"offset"`
 	CDStubs []struct {
 		ID      string `json:"id"`
-		Score   string `json:"score"`
+		Score   int    `json:"score"`
 		Count   int    `json:"count"`
 		Title   string `json:"title"`
 		Artist  string `json:"artist"`
@@ -375,7 +375,7 @@ type MusicBrainzEventResponse struct {
 	Events  []struct {
 		ID       string `json:"id"`
 		Type     string `json:"type"`
-		Score    string `json:"score"`
+		Score    int    `json:"score"`
 		Name     string `json:"name"`
 		LifeSpan struct {
 			Begin string `json:"begin"`
@@ -405,7 +405,7 @@ type MusicBrainzInstrumentResponse struct {
 	Instruments []struct {
 		ID          string `json:"id"`
 		Type        string `json:"type"`
-		Score       string `json:"score"`
+		Score       int    `json:"score"`
 		Name        string `json:"name"`
 		Description string `json:"description"`
 		Aliases     []struct {
@@ -427,7 +427,7 @@ type MusicBrainzLabelResponse struct {
 	Labels  []struct {
 		ID       string `json:"id"`
 		Type     string `json:"type"`
-		Score    string `json:"score"`
+		Score    int    `json:"score"`
 		Name     string `json:"name"`
 		SortName string `json:"sort-name"`
 		Country  string `json:"country"`
@@ -458,7 +458,7 @@ type MusicBrainzPlaceResponse struct {
 	Places  []struct {
 		ID          string `json:"id"`
 		Type        string `json:"type"`
-		Score       string `json:"score"`
+		Score       int    `json:"score"`
 		Name        string `json:"name"`
 		Address     string `json:"address"`
 		Coordinates struct {
@@ -547,7 +547,7 @@ type MusicBrainzReleaseGroupResponse struct {
 	Offset        int    `json:"offset"`
 	ReleaseGroups []struct {
 		ID               string `json:"id"`
-		Score            string `json:"score"`
+		Score            int    `json:"score"`
 		Count            int    `json:"count"`
 		Title            string `json:"title"`
 		FirstReleaseDate string `json:"first-release-date"`
@@ -583,7 +583,7 @@ type MusicBrainzReleaseResponse struct {
 	Offset   int    `json:"offset"`
 	Releases []struct {
 		ID                 string `json:"id"`
-		Score              string `json:"score"`
+		Score              int    `json:"score"`
 		Count              int    `json:"count"`
 		Title              string `json:"title"`
 		StatusID           string `json:"status-id"`
@@ -648,7 +648,7 @@ type MusicBrainzSeriesResponse struct {
 	Series  []struct {
 		ID             string `json:"id"`
 		Type           string `json:"type"`
-		Score          string `json:"score"`
+		Score          int    `json:"score"`
 		Name           string `json:"name"`
 		Disambiguation string `json:"disambiguation"`
 		Tags           []struct {
@@ -663,7 +663,7 @@ type MusicBrainzTagResponse struct {
 	Count   int    `json:"count"`
 	Offset  int    `json:"offset"`
 	Tags    []struct {
-		Score string `json:"score"`
+		Score int    `json:"score"`
 		Name  string `json:"name"`
 	} `json:"tags"`
 }
@@ -681,7 +681,7 @@ type MusicBrainzWorkResponse struct {
 	Offset  int    `json:"offset"`
 	Works   []struct {
 		ID        string `json:"id"`
-		Score     string `json:"score"`
+		Score     int    `json:"score"`
 		Title     string `json:"title"`
 		Relations []struct {
 			Type      string `json:"type"`
